@@ -32,6 +32,7 @@ Intent asked as a new 4-way question (E explicit, I implicit, A action, O other)
 | Model | Context | UCA | U-F1 E | U-F1 I | U-F1 A | U-F1 O | T-F1 | JSA |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | always O (majority) | – | 0.739 | 0 | 0 | 0 | 0.850 | – | – |
+| RNN-NLU (trained on CONDA) | – | 0.902 | 0.815 | 0.705 | 0.734 | 0.942 | 0.961 | 0.850 |
 | Joint BERT (trained on CONDA) | – | 0.924 | 0.876 | 0.751 | 0.804 | 0.956 | 0.983 | 0.894 |
 | **kev-4b-jigsaw** | no | **0.853** | **0.725** | **0.531** | **0.607** | **0.921** | **0.671** | **0.443** |
 | kev-4b-jigsaw | yes | 0.835 | 0.703 | 0.475 | 0.597 | 0.911 | 0.671 | 0.435 |
@@ -48,7 +49,9 @@ Full 16-row matrix (incl. per-slot T-F1 and the Jigsaw-questions → intent mapp
 - CONDA conversation context hurts every model (a match's whole chat, unlike Jigsaw reply chains).
 - Mapping the 7 Jigsaw answers to intent gets the best explicit F1 (0.785) but almost no implicit (≈0.07); A is 0 by construction.
 - CONDA token labels are exact lexicon matches: a lexicon lookup scores T-F1 1.000, so token scores measure lexicon guessing.
-- Zero-shot vs CONDA-trained baselines is a reference, not a like-for-like comparison.
+- Zero-shot vs CONDA-trained baselines is a reference, not a like-for-like comparison. Even the small RNN-NLU beats
+  every Kev setup (UCA 0.902 vs 0.853, JSA 0.850 vs 0.443), so the gap comes from training on CONDA labels.
+- RNN-NLU and Joint BERT rows are our own reproduction (one seed, same 8,974-utterance test set), not the paper's numbers.
 
 ## Layout
 
