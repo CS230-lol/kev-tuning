@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "kev-finetune": {
+      "source": "jaredpalmer/kev",
+      "sourceType": "github",
+      "skillPath": "skills/kev-finetune/SKILL.md",
+      "computedHash": "d213a1679e8019b7f8b6aaa8de4ec9d1c6bd0e926da0e044c5cbd8db2b6fa503"
+    }
+  }
+}

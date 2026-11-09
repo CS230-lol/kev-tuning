@@ -1,0 +1,54 @@
+{
+  "name": "jigsaw-4b",
+  "init_from": "jaredpalmer/kev-4b",
+  "base": "Qwen/Qwen3.5-4B-Base",
+  "config": {
+    "lr": 2e-05,
+    "batch": 2,
+    "accum": 4,
+    "checkpointing": 1,
+    "epochs": 1,
+    "seed": 0,
+    "replay": 2000,
+    "p_none_pair": 0.25
+  },
+  "data": {
+    "train": {
+      "records": 2547,
+      "over_limit": 1,
+      "over_limit_ids": [
+        "custom/2178"
+      ],
+      "state_tokens": {
+        "median": 96,
+        "max": 439,
+        "limit": 384
+      },
+      "questions_per_record": 7.0
+    },
+    "calibration": {
+      "records": 449,
+      "over_limit": 0,
+      "over_limit_ids": [],
+      "state_tokens": {
+        "median": 102,
+        "max": 352,
+        "limit": 384
+      },
+      "questions_per_record": 7.0
+    },
+    "development": {
+      "records": 1000,
+      "over_limit": 0,
+      "over_limit_ids": [],
+      "state_tokens": {
+        "median": 95,
+        "max": 352,
+        "limit": 384
+      },
+      "questions_per_record": 7.0
+    }
+  },
+  "kev_ref": "fc4a17e194bca35a48c57211392ec49ea54a94ac",
+  "gpu": "NVIDIA L40S"
+}

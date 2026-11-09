@@ -1,0 +1,22 @@
+# secrets
+.env
+*.pem
+# big data -> huggingface.co/datasets/CS230-lol/JigsawToxicity
+all_data.csv*
+filtered.csv
+threads.jsonl
+training.jsonl
+test.jsonl
+*.kev.jsonl
+data/
+ec2/data/
+# raw predictions + CONDA Kev records -> huggingface.co/datasets/CS230-lol/kev-jigsaw-toxicity-eval
+predictions.jsonl
+rows.json
+conda/data/
+# local
+prompt.txt
+.agents/
+.claude/
+.DS_Store
+__pycache__/
