@@ -20,3 +20,8 @@ prompt.txt
 .claude/
 .DS_Store
 __pycache__/
+hf-jigsaw/
+hf-eval/
+CONDA/
+split_data.py
+.cache/
